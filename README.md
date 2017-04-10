@@ -37,10 +37,11 @@ The Nginx service will now listen to Docker Cloud's stream API.  As services cha
 
 
 ## 3) Load Balancing a Service
-Simply run your services on Docker Cloud with the `NGINX_PORT`, `NGINX_VIRTUAL_HOST` and `NGINX_LB` environment variables set in your `Dockerfile`:
+Simply run your services on Docker Cloud with the `NGINX_PORT`, `NGINX_VIRTUAL_HOST`, `NGINX_LOCATION` and `NGINX_LB` environment variables set in your `Dockerfile`:
 ```
 ENV NGINX_LB prod
 ENV NGINX_VIRTUAL_HOST test.com,othersite.com
+ENV NGINX_LOCATION /test (optional, default to /)
 ENV NGINX_PORT 3000
 ```
 
