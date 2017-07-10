@@ -33,6 +33,7 @@ RUN npm install --production
 COPY ./.babelrc /app/.babelrc
 COPY ./docker-cloud-watch.js /app/docker-cloud-watch.js
 COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY ./docker-cloud-watch /usr/local/bin/docker-cloud-watch
 RUN chmod +x /usr/local/bin/docker-cloud-watch
 COPY ./lib /app/lib
