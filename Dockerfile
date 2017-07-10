@@ -39,6 +39,14 @@ RUN chmod +x /usr/local/bin/docker-cloud-watch
 COPY ./lib /app/lib
 COPY ./default.crt /certs/default.crt
 
+RUN apt-get install vim -y
+RUN apt-get update
+RUN apt-get install software-properties-common -y
+RUN add-apt-repository ppa:certbot/certbot -y
+RUN apt-get update
+RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+RUN apt-get install python-certbot-nginx -y
+
 EXPOSE 80
 
 CMD ["docker-cloud-watch"]
